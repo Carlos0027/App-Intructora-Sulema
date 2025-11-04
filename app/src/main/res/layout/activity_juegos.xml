@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo6"
+    tools:context=".Frutas">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textEnglishWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Texto1"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            android:gravity="center" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Watermelon"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            android:gravity="center" />
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true">
+
+            <!-- Sandía -->
+            <ImageButton
+                android:id="@+id/imgSandia"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:onClick="irMenuApp"
+                android:src="@drawable/sandia"
+                android:scaleType="centerCrop"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/nombre1" />
+
+            <!-- Mango -->
+            <ImageButton
+                android:id="@+id/imgMango"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/mango"
+                android:scaleType="centerCrop"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/nombre2" />
+
+            <!-- Manzana -->
+            <ImageButton
+                android:id="@+id/imgManzana"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/manzana"
+                android:scaleType="centerCrop"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/nombre3" />
+
+            <ImageButton
+                android:id="@+id/imgLimon"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/limmon"
+                android:scaleType="centerCrop"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@string/nombre4" />
+        </GridLayout>
+
+        <!-- Botón Aceptar -->
+        <Button
+            android:id="@+id/btnAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceptar"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/lightblue"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/textFeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".Colores">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Título principal -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/titulo3"
+            android:textColor="@color/design_default_color_on_primary"
+            android:textSize="40sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- GRID de 2 columnas -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true">
+
+            <!-- Color Azul -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/azull" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="150dp"
+                    android:onClick="blue"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/blue"
+                    android:text="@string/botonv"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Color Verde -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/verde" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:onClick="green"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/green"
+                    android:text="@string/botona"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Color Rojo -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rojo" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:onClick="red"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/red"
+                    android:text="@string/botonr"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>

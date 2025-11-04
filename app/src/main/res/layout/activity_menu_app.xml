@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@drawable/fondo1"
+    tools:context=".MenuApp">
+
+    <!-- Título principal -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menú Principal"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold"
+        android:layout_marginBottom="50dp"
+        android:elevation="6dp" />
+
+    <!-- Botón Números -->
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:onClick="irNumeros"
+        android:text="@string/titulo1"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/lightblue"
+        android:elevation="8dp"
+        android:layout_marginBottom="30dp"
+        android:padding="12dp" />
+
+    <!-- Botón Animales -->
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:onClick="irAnimales"
+        android:text="@string/titulo2"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/lightblue"
+        android:elevation="8dp"
+        android:layout_marginBottom="30dp"
+        android:padding="12dp" />
+
+    <!-- Botón Colores -->
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:onClick="irColores"
+        android:text="@string/titulo3"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/lightblue"
+        android:elevation="8dp"
+        android:layout_marginBottom="30dp"
+        android:padding="12dp" />
+
+    <!-- Botón Frutas -->
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:onClick="irFrutas"
+        android:text="@string/titulo4"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/lightblue"
+        android:elevation="8dp"
+        android:padding="12dp" />
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo3"
+    tools:context=".Animales">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/titulo2"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- GRID de 2 columnas -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true">
+
+            <!-- Colibrí -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/colibri" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="colibri"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton2"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Mariposa -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mariposa" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="mariposa"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton1"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Unicornio -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/unicor" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="unicornio"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton3"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>

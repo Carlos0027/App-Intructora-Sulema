@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">MyAppCarlos</string>
+
+    <string name="titulo">Bienvenido a mi App de ingles</string>
+    <string name="titulo0">Elige tu modo de juego</string>
+    <string name="titulo1">Numeros</string>
+    <string name="titulo2">Animales</string>
+    <string name="titulo3">Colores</string>
+    <string name="titulo4">Frutas</string>
+
+    <string name="titulo01">Aprende</string>
+    <string name="titulo02">Juega</string>
+
+    <string name="boton">Siguiente</string>
+    <string name="boton1">Mariposa</string>
+    <string name="boton2">Colibri</string>
+    <string name="boton3">Unicornio</string>
+
+    <string name="botonv">Verde</string>
+    <string name="botonr">Rojo</string>
+    <string name="botona">Azul</string>
+
+    <string name="boton01">Uno</string>
+    <string name="boton02">Dos</string>
+    <string name="boton03">Tres</string>
+    <string name="boton04">Cuatro</string>
+    <string name="boton05">Cinco</string>
+    <string name="boton06">Seis</string>
+    <string name="boton07">Siete</string>
+    <string name="boton08">Ocho</string>
+
+    <string name="nombre1">Sandia</string>
+    <string name="nombre2">Mango</string>
+    <string name="nombre3">Manzana</string>
+    <string name="nombre4">Limon</string>
+
+    <string name="Texto1">¿cual es la imagen correcta?</string>
+
+</resources>

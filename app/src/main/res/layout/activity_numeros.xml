@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo4"
+    tools:context=".Numeros">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Título principal -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/titulo1"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:layout_marginBottom="20dp" />
+
+        <!-- GRID con 2 columnas -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true">
+
+            <!-- Número 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/unoo" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="one"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton01" />
+            </LinearLayout>
+
+            <!-- Número 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/dos" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="two"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton02" />
+            </LinearLayout>
+
+            <!-- Número 3 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/tres" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="three"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton03" />
+            </LinearLayout>
+
+            <!-- Número 4 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cuatrooo" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="four"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton04" />
+            </LinearLayout>
+
+            <!-- Número 5 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cinco" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="five"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton05" />
+            </LinearLayout>
+
+            <!-- Número 6 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/seis" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="six"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton06" />
+            </LinearLayout>
+
+            <!-- Número 7 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/sietee" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="seven"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton07" />
+            </LinearLayout>
+
+            <!-- Número 8 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ocho" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="eight"
+                    android:backgroundTint="@color/lightblue"
+                    android:text="@string/boton08" />
+            </LinearLayout>
+
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>
