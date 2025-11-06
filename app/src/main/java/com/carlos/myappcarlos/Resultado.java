@@ -1,7 +1,6 @@
 package com.carlos.myappcarlos;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 
@@ -11,26 +10,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Juegos extends AppCompatActivity {
-
-    private MediaPlayer au_audio1;
+public class Resultado extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_juegos);
-
-        au_audio1 = MediaPlayer.create(Juegos.this, R.raw.audio1);
+        setContentView(R.layout.activity_resultado);
 
     }
+    public void irMainActivity(View view) {
 
-    public void irJuegos02(View view) {
-
-        Intent siguiente = new Intent ( Juegos.this,Juegos02.class);
+        Intent siguiente = new Intent ( Resultado.this,MainActivity.class);
         startActivity(siguiente);
-    }
-    public void ganaste(View View){
-        au_audio1.start();
 
     }
 }

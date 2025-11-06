@@ -55,7 +55,7 @@
                     android:onClick="blue"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/blue"
-                    android:text="@string/botonv"
+                    android:text="@string/botona"
                     android:layout_marginTop="8dp" />
             </LinearLayout>
 
@@ -78,7 +78,7 @@
                     android:onClick="green"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/green"
-                    android:text="@string/botona"
+                    android:text="@string/botonv"
                     android:layout_marginTop="8dp" />
             </LinearLayout>
 

@@ -52,7 +52,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:onClick="one"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton01" />
             </LinearLayout>
 
@@ -73,7 +73,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:onClick="two"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton02" />
             </LinearLayout>
 
@@ -94,7 +94,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:onClick="three"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton03" />
             </LinearLayout>
 
@@ -115,7 +115,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:onClick="four"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton04" />
             </LinearLayout>
 
@@ -136,7 +136,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:onClick="five"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton05" />
             </LinearLayout>
 
@@ -157,7 +157,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:onClick="six"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton06" />
             </LinearLayout>
 
@@ -178,7 +178,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:onClick="seven"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton07" />
             </LinearLayout>
 
@@ -199,7 +199,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:onClick="eight"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton08" />
             </LinearLayout>
 

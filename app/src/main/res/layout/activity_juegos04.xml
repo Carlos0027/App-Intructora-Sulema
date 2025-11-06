@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo001"
+    android:background="@drawable/fondo004"
     tools:context=".Frutas">
 
     <LinearLayout
@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Watermelon"
+            android:text="Blue"
             android:textSize="28sp"
             android:textColor="@color/black"
             android:fontFamily="sans-serif-black"
@@ -51,8 +51,7 @@
                 android:id="@+id/imgSandia"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:onClick="ganaste"
-                android:src="@drawable/sandia"
+                android:src="@drawable/azull"
                 android:scaleType="centerCrop"
                 android:background="?attr/selectableItemBackground"
                 android:contentDescription="@string/nombre1" />
@@ -62,7 +61,7 @@
                 android:id="@+id/imgMango"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/mango"
+                android:src="@drawable/rojo"
                 android:scaleType="centerCrop"
                 android:background="?attr/selectableItemBackground"
                 android:contentDescription="@string/nombre2" />
@@ -72,19 +71,12 @@
                 android:id="@+id/imgManzana"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/manzana"
+                android:onClick="greenn"
+                android:src="@drawable/verde"
                 android:scaleType="centerCrop"
                 android:background="?attr/selectableItemBackground"
                 android:contentDescription="@string/nombre3" />
 
-            <ImageButton
-                android:id="@+id/imgLimon"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/limmon"
-                android:scaleType="centerCrop"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/nombre4" />
         </GridLayout>
 
         <!-- Botón Aceptar -->
@@ -93,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Aceptar"
-            android:onClick="irJuegos02"
+            android:onClick="irResultado"
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/lightblue"
             android:textColor="@color/black"/>

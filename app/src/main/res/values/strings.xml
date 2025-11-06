@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">MyAppCarlos</string>
+    <string name="Inicio">Inicio</string>
 
     <string name="titulo">Bienvenido a mi App de ingles</string>
     <string name="titulo0">Elige tu modo de juego</string>

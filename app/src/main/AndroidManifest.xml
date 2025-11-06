@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAppCarlos">
         <activity
+            android:name=".Resultado"
+            android:exported="false" />
+        <activity
+            android:name=".Juegos04"
+            android:exported="false" />
+        <activity
+            android:name=".Juegos03"
+            android:exported="false" />
+        <activity
+            android:name=".Juegos02"
+            android:exported="false" />
+        <activity
             android:name=".Juegos"
             android:exported="false" />
         <activity

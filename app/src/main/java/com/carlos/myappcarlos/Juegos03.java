@@ -11,25 +11,25 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Juegos extends AppCompatActivity {
+public class Juegos03 extends AppCompatActivity {
 
     private MediaPlayer au_audio1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_juegos);
+        setContentView(R.layout.activity_juegos03);
 
-        au_audio1 = MediaPlayer.create(Juegos.this, R.raw.audio1);
+        au_audio1= MediaPlayer.create(Juegos03.this, R.raw.audio1);
 
     }
 
-    public void irJuegos02(View view) {
+    public void irJuegos04(View view) {
 
-        Intent siguiente = new Intent ( Juegos.this,Juegos02.class);
+        Intent siguiente = new Intent ( Juegos03.this,Juegos04.class);
         startActivity(siguiente);
     }
-    public void ganaste(View View){
+    public void twoo(View View){
         au_audio1.start();
 
     }

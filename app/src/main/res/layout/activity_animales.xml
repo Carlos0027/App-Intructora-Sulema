@@ -53,7 +53,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:onClick="colibri"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton2"
                     android:layout_marginTop="8dp" />
             </LinearLayout>
@@ -76,7 +76,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:onClick="mariposa"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton1"
                     android:layout_marginTop="8dp" />
             </LinearLayout>
@@ -99,7 +99,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:onClick="unicornio"
-                    android:backgroundTint="@color/lightblue"
+                    android:backgroundTint="@color/black"
                     android:text="@string/boton3"
                     android:layout_marginTop="8dp" />
             </LinearLayout>

@@ -9,26 +9,27 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
-    android:background="@drawable/fondo5"
+    android:background="@drawable/fondo007"
     tools:context=".MainActivity">
 
     <!-- Título principal -->
+
+    <!-- Imagen central -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/titulo"
-        android:textSize="40sp"
-        android:textColor="@color/blue"
+        android:layout_marginBottom="29dp"
+        android:elevation="20dp"
         android:fontFamily="sans-serif-black"
-        android:textStyle="bold"
-        android:layout_marginBottom="40dp"
-        android:elevation="6dp" />
+        android:text="@string/titulo"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
-    <!-- Imagen central -->
     <ImageView
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:src="@drawable/colibri"
+        android:layout_width="420dp"
+        android:layout_height="400dp"
+        android:src="@drawable/fondo006"
         android:layout_marginBottom="60dp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerInside"
@@ -43,10 +44,10 @@
         android:textSize="18sp"
         android:textColor="@android:color/white"
         android:fontFamily="sans-serif-medium"
-        android:backgroundTint="@color/blue"
+        android:backgroundTint="@color/black"
         android:padding="14dp"
         android:elevation="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="2dp"
         android:layout_gravity="center" />
 
 </LinearLayout>
