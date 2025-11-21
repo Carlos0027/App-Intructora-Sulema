@@ -1,14 +1,12 @@
-package com.carlos.myappcarlos;
+package com.carlos.myappcarlos.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.carlos.myappcarlos.R;
 
 public class Elecciones extends AppCompatActivity {
 
@@ -21,13 +19,13 @@ public class Elecciones extends AppCompatActivity {
     }
     public void irMenuApp(View view) {
 
-        Intent siguiente = new Intent ( Elecciones.this,MenuApp.class);
+        Intent siguiente = new Intent ( Elecciones.this, MenuApp.class);
         startActivity(siguiente);
     }
 
     public void irJuegos(View view) {
 
-        Intent siguiente = new Intent ( Elecciones.this,Juegos.class);
+        Intent siguiente = new Intent ( Elecciones.this, Juegos.class);
         startActivity(siguiente);
     }
 }

@@ -1,115 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo003"
-    tools:context=".Frutas">
+    android:padding="24dp"
+    tools:context=".Juego3"> <!-- MEJORA: El contexto ahora apunta a Juego3 -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Puntaje en la esquina superior derecha -->
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp">
+        android:background="#80000000"
+        android:padding="8dp"
+        android:text="@string/score_label"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textEnglishWord"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Texto1"
-            android:textSize="28sp"
-            android:textColor="@color/black"
-            android:fontFamily="sans-serif-black"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp"
-            android:gravity="center" />
+    <!-- Título del Juego -->
+    <TextView
+        android:id="@+id/tvGameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/juego_titulo_numeros"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvScore" />
 
+    <!-- Palabra a Adivinar -->
+    <TextView
+        android:id="@+id/tvWordToGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGameTitle"
+        tools:text="Two" /> <!-- Texto de previsualización -->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Two"
-            android:textSize="28sp"
-            android:textColor="@color/black"
-            android:fontFamily="sans-serif-black"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp"
-            android:gravity="center" />
+    <!-- GridLayout con las opciones -->
+    <GridLayout
+        android:id="@+id/gridLayoutOptions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/textFeedback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWordToGuess"
+        app:layout_constraintVertical_bias="0.5">
 
+        <!-- Los ImageButton son genéricos, se llenarán desde el código -->
+        <ImageButton
+            android:id="@+id/imgOption1"
+            style="@style/GameImageButton"
+            android:contentDescription="@string/opcion_de_juego_1"
+            tools:src="@drawable/unoo" />
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:alignmentMode="alignMargins"
-            android:useDefaultMargins="true">
+        <ImageButton
+            android:id="@+id/imgOption2"
+            style="@style/GameImageButton"
+            android:contentDescription="@string/opcion_de_juego_2"
+            tools:src="@drawable/dos" />
 
-            <!-- Sandía -->
-            <ImageButton
-                android:id="@+id/imgSandia"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/unoo"
-                android:scaleType="centerCrop"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/nombre1" />
+        <ImageButton
+            android:id="@+id/imgOption3"
+            style="@style/GameImageButton"
+            android:contentDescription="@string/opcion_de_juego_3"
+            tools:src="@drawable/tres" />
 
-            <!-- Mango -->
-            <ImageButton
-                android:id="@+id/imgMango"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:onClick="twoo"
-                android:src="@drawable/dos"
-                android:scaleType="centerCrop"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/nombre2" />
+        <ImageButton
+            android:id="@+id/imgOption4"
+            style="@style/GameImageButton"
+            android:contentDescription="@string/opcion_de_juego_4"
+            tools:src="@drawable/cuatrooo" />
+    </GridLayout>
 
-            <!-- Manzana -->
-            <ImageButton
-                android:id="@+id/imgManzana"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/tres"
-                android:scaleType="centerCrop"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/nombre3" />
+    <!-- Mensaje de Feedback (Correcto/Incorrecto) -->
+    <TextView
+        android:id="@+id/textFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="¡Correcto!" />
 
-            <ImageButton
-                android:id="@+id/imgcuatro"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/cuatrooo"
-                android:scaleType="centerCrop"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="@string/nombre3" />
-
-
-        </GridLayout>
-
-        <!-- Botón Aceptar -->
-        <Button
-            android:id="@+id/btnAccept"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Aceptar"
-            android:onClick="irJuegos04"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="@color/lightblue"
-            android:textColor="@color/black"/>
-
-
-        <TextView
-            android:id="@+id/textFeedback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="24sp"
-            android:textColor="@color/black"
-            android:fontFamily="sans-serif-medium"
-            android:layout_marginTop="24dp" />
-
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

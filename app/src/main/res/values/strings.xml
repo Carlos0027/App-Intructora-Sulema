@@ -8,6 +8,9 @@
     <string name="titulo2">Animales</string>
     <string name="titulo3">Colores</string>
     <string name="titulo4">Frutas</string>
+    <string name="titulo5">Carga Imagen de Picasso</string>
+    <string name="titulo6">Carga Imagen local</string>
+    <string name="titulo7">Carga Imagen de Internet</string>
 
     <string name="titulo01">Aprende</string>
     <string name="titulo02">Juega</string>
@@ -36,5 +39,98 @@
     <string name="nombre4">Limon</string>
 
     <string name="Texto1">¿cual es la imagen correcta?</string>
+
+
+        <!-- Strings para la pantalla de Login (Versión Básica) -->
+        <string name="login_hint_email_basico">Correo Electrónico</string>
+        <string name="login_hint_password_basico">Contraseña</string>
+        <string name="login_button_text_basico">Iniciar Sesión</string>
+        <string name="login_signup_prompt_basico">¿No tienes cuenta? Regístrate aquí</string>
+        <string name="login_logo_description_basico">Logo de la aplicación</string>
+
+
+
+
+    <!-- Strings para la pantalla de Registro -->
+    <string name="register_title">Crea tu cuenta</string>
+    <string name="register_hint_name">Nombre completo</string>
+    <string name="register_hint_nickname">Apodo</string>
+    <string name="register_hint_age">Edad</string>
+    <string name="register_label_school">Selecciona tu Colegio</string>
+    <string name="register_label_gender">Género</string>
+    <string name="register_button_submit">Enviar</string>
+    <!-- ⭐ NUEVO: Strings para RadioButtons de Género ⭐ -->
+    <string name="gender_male">Hombre</string>
+    <string name="gender_female">Mujer</string>
+
+    <!-- Mensajes para el usuario -->
+    <string name="register_success">¡Registro completado!</string>
+    <string name="register_error_fields_required">Por favor, rellena todos los campos</string>
+
+
+        <!-- Strings para la pantalla de Bienvenida -->
+        <string name="welcome_message">Bienvenido a la app de Inglés</string>
+        <string name="welcome_button_next">Siguiente</string>
+        <string name="welcome_icon_description">Icono de bienvenida</string>
+
+
+
+        <!-- Estilos para la pantalla del juego -->
+        <style name="GameTitleText">
+            <item name="android:textSize">24sp</item>
+            <item name="android:textColor">@color/black</item>
+            <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        </style>
+
+        <style name="WordToGuessText">
+            <item name="android:textSize">34sp</item>
+            <item name="android:textColor">@color/black</item>
+            <item name="android:fontFamily">sans-serif-black</item>
+            <item name="android:textStyle">bold</item>
+        </style>
+
+        <style name="GameImageButton">
+            <!-- layout_weight hace que las columnas se dividan el espacio equitativamente -->
+            <item name="android:layout_width">0dp</item>
+            <item name="android:layout_height">0dp</item>
+            <item name="android:layout_columnWeight">1</item>
+            <item name="android:layout_rowWeight">1</item>
+            <item name="android:scaleType">centerCrop</item>
+            <item name="android:background">@android:color/transparent</item>
+            <item name="android:padding">8dp</item>
+        </style>
+
+        <!-- ... otros strings ... -->
+    <string name="juego_titulo_frutas">¿Cuál es esta fruta?</string>
+    <string name="boton_siguiente">Siguiente Nivel</string>
+    <string name="opcion_de_juego_1">Opción de juego 1</string>
+    <string name="opcion_de_juego_2">Opción de juego 2</string>
+    <string name="opcion_de_juego_3">Opción de juego 3</string>
+    <string name="opcion_de_juego_4">Opción de juego 4</string>
+    <string name="score_label">Puntos: 0</string>
+    <string name="juego_titulo_animales">¿Cuál es este animal?</string>
+    <string name="juego_titulo_numeros">¿Cuál es este número?</string>
+    <string name="juego_titulo_colores">¿Cuál es este color?</string>
+
+
+        <!-- Feedback del juego -->
+        <string name="feedback_correcto">¡Correcto!</string>
+        <string name="feedback_incorrecto">Incorrecto</string>
+
+        <!-- Palabras del juego -->
+        <string name="word_watermelon">Watermelon</string>
+
+        <!-- Opciones de imágenes (puedes usar esto si quieres mostrar texto alternativo) -->
+        <string name="option_sandia">Sandía</string>
+        <string name="option_mango">Mango</string>
+        <string name="option_manzana">Manzana</string>
+        <string name="option_limon">Limón</string>
+        <string name="word_hummingbird">Hummingbird</string>
+        <string name="word_two">Two</string>
+        <string name="word_blue">Blue</string>
+        <string name="game_finished">¡Juego Terminado! Puntuación Final: %d</string>
+
+
+
 
 </resources>

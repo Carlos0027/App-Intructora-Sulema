@@ -1,14 +1,12 @@
-package com.carlos.myappcarlos;
+package com.carlos.myappcarlos.controller;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.carlos.myappcarlos.R;
 
 public class Numeros extends AppCompatActivity {
 

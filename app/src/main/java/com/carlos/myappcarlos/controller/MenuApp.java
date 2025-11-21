@@ -1,14 +1,12 @@
-package com.carlos.myappcarlos;
+package com.carlos.myappcarlos.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.carlos.myappcarlos.R;
 
 public class MenuApp extends AppCompatActivity {
 
@@ -22,25 +20,25 @@ public class MenuApp extends AppCompatActivity {
 
     public void irNumeros(View view) {
 
-        Intent siguiente = new Intent ( MenuApp.this,Numeros.class);
+        Intent siguiente = new Intent ( MenuApp.this, Numeros.class);
         startActivity(siguiente);
 
     }
     public void irAnimales(View view) {
 
-        Intent siguiente = new Intent ( MenuApp.this,Animales.class);
+        Intent siguiente = new Intent ( MenuApp.this, Animales.class);
         startActivity(siguiente);
 
     }
     public void irColores(View view) {
 
-        Intent siguiente = new Intent ( MenuApp.this,Colores.class);
+        Intent siguiente = new Intent ( MenuApp.this, Colores.class);
         startActivity(siguiente);
 
     }
     public void irFrutas(View view) {
 
-        Intent siguiente = new Intent ( MenuApp.this,Frutas.class);
+        Intent siguiente = new Intent ( MenuApp.this, Frutas.class);
         startActivity(siguiente);
 
     }

@@ -12,52 +12,58 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAppCarlos">
         <activity
-            android:name=".Resultado"
+            android:name=".BaseGame"
             android:exported="false" />
         <activity
-            android:name=".Juegos04"
+            android:name=".controller.Bienvenido"
             android:exported="false" />
         <activity
-            android:name=".Juegos03"
+            android:name=".controller.Register"
             android:exported="false" />
         <activity
-            android:name=".Juegos02"
+            android:name=".controller.Login"
             android:exported="false" />
         <activity
-            android:name=".Juegos"
+            android:name=".controller.Resultado"
             android:exported="false" />
         <activity
-            android:name=".Elecciones"
+            android:name=".controller.Juegos04"
             android:exported="false" />
         <activity
-            android:name=".Frutas"
+            android:name=".controller.Juegos03"
+            android:exported="false" />
+        <activity
+            android:name=".controller.Juegos02"
+            android:exported="false" />
+        <activity
+            android:name=".controller.Juegos"
+            android:exported="false" />
+        <activity
+            android:name=".controller.Elecciones"
+            android:exported="false" />
+        <activity
+            android:name=".controller.Frutas"
             android:exported="false" />
         <activity
             android:name=".Audios"
             android:exported="false" />
         <activity
-            android:name=".Audio"
+            android:name=".controller.MenuApp"
             android:exported="false" />
         <activity
-            android:name=".AudioActivity"
+            android:name=".controller.MainActivity2"
             android:exported="false" />
         <activity
-            android:name=".MenuApp"
+            android:name=".controller.Animales"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".controller.Numeros"
             android:exported="false" />
         <activity
-            android:name=".Animales"
+            android:name=".controller.Colores"
             android:exported="false" />
         <activity
-            android:name=".Numeros"
-            android:exported="false" />
-        <activity
-            android:name=".Colores"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".controller.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

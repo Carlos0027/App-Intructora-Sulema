@@ -10,7 +10,7 @@
     android:gravity="center"
     android:padding="32dp"
     android:background="@drawable/fondo1"
-    tools:context=".MenuApp">
+    tools:context=".controller.MenuApp">
 
     <!-- Título principal -->
     <TextView
