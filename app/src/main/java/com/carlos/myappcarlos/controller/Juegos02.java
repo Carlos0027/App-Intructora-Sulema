@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.media.MediaPlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -25,6 +26,10 @@ public class Juegos02 extends AppCompatActivity implements View.OnClickListener 
     private int score = 0;
     private boolean clickBloqueado = false;
 
+    // 🔊 SONIDOS
+    private MediaPlayer sonidoCorrecto;
+    private MediaPlayer sonidoIncorrecto;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +37,10 @@ public class Juegos02 extends AppCompatActivity implements View.OnClickListener 
 
         // Recibe el puntaje de la actividad anterior
         score = getIntent().getIntExtra("CURRENT_SCORE", 0);
+
+        // Crea los sonidos
+        sonidoCorrecto = MediaPlayer.create(this, R.raw.colibri);
+        sonidoIncorrecto = MediaPlayer.create(this, R.raw.audio1);
 
         vincularVistas();
         configurarListeners();
@@ -68,9 +77,8 @@ public class Juegos02 extends AppCompatActivity implements View.OnClickListener 
         opciones.add(R.drawable.mariposa);
         opciones.add(R.drawable.fondopatolucas);
 
-        // Usa string de resources
         preguntaActual = new Pregunta(getString(R.string.word_hummingbird), R.drawable.colibri, opciones);
-        // ------------------------------------
+        // ----------------------------------------
 
         tvWordToGuess.setText(preguntaActual.palabra);
 
@@ -96,11 +104,19 @@ public class Juegos02 extends AppCompatActivity implements View.OnClickListener 
         if (idImagenPresionada == preguntaActual.imagenCorrecta) {
             score++;
             tvScore.setText("Puntaje: " + score);
+
             textFeedback.setText(R.string.feedback_correcto);
             textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_green_dark));
+
+            // 🔊 Sonido correcto
+            sonidoCorrecto.start();
+
         } else {
             textFeedback.setText(R.string.feedback_incorrecto);
             textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark));
+
+            // ❌ Sonido incorrecto
+            sonidoIncorrecto.start();
         }
 
         new Handler(Looper.getMainLooper()).postDelayed(this::iniciarSiguienteActividad, 1500);
@@ -111,6 +127,13 @@ public class Juegos02 extends AppCompatActivity implements View.OnClickListener 
         intent.putExtra("CURRENT_SCORE", score);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (sonidoCorrecto != null) sonidoCorrecto.release();
+        if (sonidoIncorrecto != null) sonidoIncorrecto.release();
     }
 
     // Clase interna para definir la estructura de una pregunta

@@ -1,127 +1,83 @@
 package com.carlos.myappcarlos.controller;
 
-import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.carlos.myappcarlos.R;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+public class Juegos03 extends AppCompatActivity {
 
-public class Juegos03 extends AppCompatActivity implements View.OnClickListener {
+    TextView tvWordToGuess, tvScore, textFeedback;
+    ImageButton img1, img2, img3, img4;
 
-    private TextView tvWordToGuess, tvScore, textFeedback;
-    private List<ImageButton> imageButtons;
-    private Pregunta preguntaActual;
-    private int score = 0;
-    private boolean clickBloqueado = false;
+    int correctIndex = 0;
+    int score = 0;
+
+    MediaPlayer sonidoCorrecto;
+    MediaPlayer sonidoIncorrecto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juegos03);
 
-        // Recibe el puntaje de la actividad anterior
-        score = getIntent().getIntExtra("CURRENT_SCORE", 0);
-
-        vincularVistas();
-        configurarListeners();
-        cargarPregunta();
-    }
-
-    private void vincularVistas() {
+        // Referencias UI
         tvWordToGuess = findViewById(R.id.tvWordToGuess);
         tvScore = findViewById(R.id.tvScore);
         textFeedback = findViewById(R.id.textFeedback);
 
-        imageButtons = new ArrayList<>();
-        imageButtons.add(findViewById(R.id.imgOption1));
-        imageButtons.add(findViewById(R.id.imgOption2));
-        imageButtons.add(findViewById(R.id.imgOption3));
-        imageButtons.add(findViewById(R.id.imgOption4));
+        img1 = findViewById(R.id.imgOption1);
+        img2 = findViewById(R.id.imgOption2);
+        img3 = findViewById(R.id.imgOption3);
+        img4 = findViewById(R.id.imgOption4);
+
+        // Sonidos
+        sonidoCorrecto = MediaPlayer.create(this, R.raw.two);       // Cambia si tienes otro audio
+        sonidoIncorrecto = MediaPlayer.create(this, R.raw.audio1);  // Cambia si tienes otro audio
+
+        configurarJuego();
     }
 
-    private void configurarListeners() {
-        for (ImageButton ib : imageButtons) {
-            ib.setOnClickListener(this);
-        }
+    private void configurarJuego() {
+
+        // Palabra correcta
+        tvWordToGuess.setText("Two");
+
+        // Imagen correcta = opción 2
+        correctIndex = 2;
+
+        // Listeners
+        img1.setOnClickListener(v -> verificarRespuesta(1));
+        img2.setOnClickListener(v -> verificarRespuesta(2));
+        img3.setOnClickListener(v -> verificarRespuesta(3));
+        img4.setOnClickListener(v -> verificarRespuesta(4));
     }
 
-    private void cargarPregunta() {
-        clickBloqueado = false;
-        textFeedback.setText("");
-        tvScore.setText("Puntaje: " + score);
+    private void verificarRespuesta(int opcionSeleccionada) {
 
-        // --- Define la pregunta de este nivel ---
-        List<Integer> opciones = new ArrayList<>();
-        opciones.add(R.drawable.unoo);
-        opciones.add(R.drawable.dos); // Respuesta Correcta
-        opciones.add(R.drawable.tres);
-        opciones.add(R.drawable.cuatrooo);
+        if (opcionSeleccionada == correctIndex) {
 
-        // Usamos string de resources
-        preguntaActual = new Pregunta(getString(R.string.word_two), R.drawable.dos, opciones);
-        // ------------------------------------
+            textFeedback.setText("✔ ¡Correcto!");
+            score++;
+            tvScore.setText("Puntaje: " + score);
 
-        tvWordToGuess.setText(preguntaActual.palabra);
+            sonidoCorrecto.start();
 
-        List<Integer> opcionesMezcladas = new ArrayList<>(preguntaActual.opciones);
-        Collections.shuffle(opcionesMezcladas);
+        } else {
 
-        for (int i = 0; i < imageButtons.size(); i++) {
-            ImageButton boton = imageButtons.get(i);
-            int imagenId = opcionesMezcladas.get(i);
-            boton.setImageResource(imagenId);
-            boton.setTag(imagenId);
+            textFeedback.setText("✘ Incorrecto");
+            sonidoIncorrecto.start();
         }
     }
 
     @Override
-    public void onClick(View view) {
-        if (clickBloqueado) return;
-        clickBloqueado = true;
-
-        ImageButton botonPresionado = (ImageButton) view;
-        int idImagenPresionada = (int) botonPresionado.getTag();
-
-        if (idImagenPresionada == preguntaActual.imagenCorrecta) {
-            score++;
-            tvScore.setText("Puntaje: " + score);
-            textFeedback.setText(R.string.feedback_correcto);
-            textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_green_dark));
-        } else {
-            textFeedback.setText(R.string.feedback_incorrecto);
-            textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark));
-        }
-
-        new Handler(Looper.getMainLooper()).postDelayed(this::iniciarSiguienteActividad, 1500);
-    }
-
-    private void iniciarSiguienteActividad() {
-        Intent intent = new Intent(this, Juegos04.class);
-        intent.putExtra("CURRENT_SCORE", score);
-        startActivity(intent);
-        finish();
-    }
-
-    private static class Pregunta {
-        final String palabra;
-        final int imagenCorrecta;
-        final List<Integer> opciones;
-
-        public Pregunta(String palabra, int imagenCorrecta, List<Integer> opciones) {
-            this.palabra = palabra;
-            this.imagenCorrecta = imagenCorrecta;
-            this.opciones = opciones;
-        }
+    protected void onDestroy() {
+        super.onDestroy();
+        if (sonidoCorrecto != null) sonidoCorrecto.release();
+        if (sonidoIncorrecto != null) sonidoIncorrecto.release();
     }
 }

@@ -91,6 +91,7 @@
         <ImageButton
             android:id="@+id/imgOption4"
             style="@style/GameImageButton"
+
             android:contentDescription="@string/opcion_de_juego_4"
             tools:src="@drawable/limmon" />
     </GridLayout>

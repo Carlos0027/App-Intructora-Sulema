@@ -6,6 +6,7 @@ import android.os.Looper;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.media.MediaPlayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -21,16 +22,24 @@ public class Juegos04 extends AppCompatActivity implements View.OnClickListener 
     private TextView tvWordToGuess, tvScore, textFeedback;
     private List<ImageButton> imageButtons;
     private Pregunta preguntaActual;
+
     private int score = 0;
     private boolean clickBloqueado = false;
+
+    // 🎵 SONIDOS
+    private MediaPlayer sonidoCorrecto;
+    private MediaPlayer sonidoIncorrecto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_juegos04); // CORREGIDO
+        setContentView(R.layout.activity_juegos04);
 
-        // Recibe el puntaje de la actividad anterior
         score = getIntent().getIntExtra("CURRENT_SCORE", 0);
+
+        // Cargar sonidos reales
+        sonidoCorrecto = MediaPlayer.create(this, R.raw.blue);     // Sonido correcto
+        sonidoIncorrecto = MediaPlayer.create(this, R.raw.audio1); // Sonido incorrecto
 
         vincularVistas();
         configurarListeners();
@@ -56,59 +65,83 @@ public class Juegos04 extends AppCompatActivity implements View.OnClickListener 
     }
 
     private void cargarPregunta() {
+
         clickBloqueado = false;
         textFeedback.setText("");
         tvScore.setText("Puntaje: " + score);
 
-        // --- Define la pregunta ---
+        // ---- NIVEL AZUL ----
         List<Integer> opciones = new ArrayList<>();
-        opciones.add(R.drawable.azull); // Respuesta Correcta
+        opciones.add(R.drawable.azull);   // Correcta
         opciones.add(R.drawable.rojo);
         opciones.add(R.drawable.verde);
         opciones.add(R.drawable.amarillo);
 
-        preguntaActual = new Pregunta(getString(R.string.word_blue), R.drawable.azull, opciones);
-        // ------------------------------------
+        preguntaActual = new Pregunta(
+                "Blue",              // palabra a mostrar
+                R.drawable.azull,    // imagen correcta
+                opciones
+        );
 
+        // Mostrar palabra
         tvWordToGuess.setText(preguntaActual.palabra);
 
+        // Mezclar imágenes
         List<Integer> opcionesMezcladas = new ArrayList<>(preguntaActual.opciones);
         Collections.shuffle(opcionesMezcladas);
 
+        // Cargar imágenes en botones
         for (int i = 0; i < imageButtons.size(); i++) {
             ImageButton boton = imageButtons.get(i);
             int imagenId = opcionesMezcladas.get(i);
             boton.setImageResource(imagenId);
-            boton.setTag(imagenId);
+            boton.setTag(imagenId); // IMPORTANTE
         }
     }
 
     @Override
     public void onClick(View view) {
+
         if (clickBloqueado) return;
         clickBloqueado = true;
 
         ImageButton botonPresionado = (ImageButton) view;
-        int idImagenPresionada = (int) botonPresionado.getTag();
+        int idImagenSeleccionada = (int) botonPresionado.getTag();
 
-        if (idImagenPresionada == preguntaActual.imagenCorrecta) {
+        if (idImagenSeleccionada == preguntaActual.imagenCorrecta) {
+
             score++;
             tvScore.setText("Puntaje: " + score);
-            textFeedback.setText(R.string.feedback_correcto);
+
+            textFeedback.setText("✔ Correcto");
             textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_green_dark));
+
+            sonidoCorrecto.start();
+
         } else {
-            textFeedback.setText(R.string.feedback_incorrecto);
+
+            textFeedback.setText("✘ Incorrecto");
             textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark));
+
+            sonidoIncorrecto.start();
         }
 
-        // Después de la última pregunta, muestra el resultado final
+        // Muestra mensaje final luego de 1.5 segundos
         new Handler(Looper.getMainLooper()).postDelayed(this::mostrarResultadoFinal, 1500);
     }
 
     private void mostrarResultadoFinal() {
-        textFeedback.setText(getString(R.string.game_finished, score));
+        textFeedback.setText("Juego Terminado. Puntuación final: " + score);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (sonidoCorrecto != null) sonidoCorrecto.release();
+        if (sonidoIncorrecto != null) sonidoIncorrecto.release();
+    }
+
+    // -------------------- CLASE PREGUNTA --------------------
     private static class Pregunta {
         final String palabra;
         final int imagenCorrecta;

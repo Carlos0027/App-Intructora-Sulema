@@ -1,6 +1,7 @@
 package com.carlos.myappcarlos.controller;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -26,12 +27,18 @@ public class Juegos extends AppCompatActivity implements View.OnClickListener {
     private int score = 0;
     private boolean clickBloqueado = false;
 
+    // --- AUDIOS ---
+    private MediaPlayer sonidoCorrecto;
+    private MediaPlayer sonidoIncorrecto;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juegos);
 
-        score = 0; // Puntaje inicial
+        // Cargar audios
+        sonidoCorrecto = MediaPlayer.create(this, R.raw.sandia);
+        sonidoIncorrecto = MediaPlayer.create(this, R.raw.audio1);
 
         vincularVistas();
         configurarListeners();
@@ -61,16 +68,13 @@ public class Juegos extends AppCompatActivity implements View.OnClickListener {
         textFeedback.setText("");
         tvScore.setText("Puntaje: " + score);
 
-
-        // --- Define la pregunta de este nivel ---
         List<Integer> opciones = new ArrayList<>();
-        opciones.add(R.drawable.sandia); // Respuesta correcta
+        opciones.add(R.drawable.sandia);  // Correcta
         opciones.add(R.drawable.mango);
         opciones.add(R.drawable.manzana);
-        opciones.add(R.drawable.limmon); // Corregido typo de "limmon" a "limon"
+        opciones.add(R.drawable.limmon);
 
         preguntaActual = new Pregunta("Watermelon", R.drawable.sandia, opciones);
-        // ------------------------------------
 
         tvWordToGuess.setText(preguntaActual.palabra);
 
@@ -94,15 +98,22 @@ public class Juegos extends AppCompatActivity implements View.OnClickListener {
         int idImagenPresionada = (int) botonPresionado.getTag();
 
         if (idImagenPresionada == preguntaActual.imagenCorrecta) {
+            // SONIDO CORRECTO
+            sonidoCorrecto.start();
+
             score++;
             tvScore.setText("Puntaje: " + score);
             textFeedback.setText("¡Correcto!");
             textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_green_dark));
         } else {
+            // SONIDO INCORRECTO
+            sonidoIncorrecto.start();
+
             textFeedback.setText("Incorrecto");
             textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark));
         }
 
+        // Espera 1.5 segundos y pasa al siguiente juego
         new Handler(Looper.getMainLooper()).postDelayed(this::iniciarSiguienteActividad, 1500);
     }
 
@@ -113,7 +124,7 @@ public class Juegos extends AppCompatActivity implements View.OnClickListener {
         finish();
     }
 
-    // Clase interna para definir la estructura de una pregunta
+    // Clase interna Pregunta
     private static class Pregunta {
         final String palabra;
         final int imagenCorrecta;

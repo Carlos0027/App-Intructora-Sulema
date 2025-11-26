@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo004"
     android:padding="24dp"
-    tools:context=".Juego4"> <!-- MEJORA: El contexto ahora apunta a Juego4 -->
+    tools:context=".controller.Juegos04"> <!-- MEJORA: El contexto ahora apunta a Juego4 -->
 
     <!-- Puntaje en la esquina superior derecha -->
     <TextView

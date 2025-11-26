@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo002"
     android:padding="24dp"
-    tools:context=".Juego2"> <!-- MEJORA: El contexto ahora apunta a Juego2 -->
+    tools:context=".controller.Juegos02"> <!-- MEJORA: El contexto ahora apunta a Juego2 -->
 
     <!-- Puntaje en la esquina superior derecha -->
     <TextView
@@ -70,7 +70,6 @@
         <ImageButton
             android:id="@+id/imgOption1"
             style="@style/GameImageButton"
-            android:onClick="irJuegos03"
             android:contentDescription="@string/opcion_de_juego_1"
             tools:src="@drawable/colibri" />
 

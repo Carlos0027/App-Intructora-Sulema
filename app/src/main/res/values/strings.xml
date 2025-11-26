@@ -131,6 +131,26 @@
         <string name="game_finished">¡Juego Terminado! Puntuación Final: %d</string>
 
 
+    <string-array name="colegios_popayan">
+        <item>Seleccione un colegio</item>
+        <item>Institución Educativa INEM Francisco José de Caldas</item>
+        <item>Institución Educativa Técnico Industrial</item>
+        <item>Institución Educativa Melvin Jones</item>
+        <item>Colegio Champagnat</item>
+        <item>Colegio San José de Tarbes</item>
+        <item>Colegio Las Mercedes</item>
+        <item>Colegio Colombo Francés</item>
+        <item>Colegio Los Andes</item>
+        <item>Institución Educativa Don Bosco</item>
+        <item>Institución Educativa Jesús de Nazareth</item>
+        <item>Colegio Sagrado Corazón de Jesús</item>
+        <item>Colegio Liceo Alejandro de Humboldt</item>
+        <item>Colegio San Agustín</item>
+        <item>Institución Educativa La Pamba</item>
+        <item>Institución Educativa Liceo de la Universidad del Cauca</item>
+        <item>Institución Educativa Hogar Juvenil Campesino</item>
+    </string-array>
+    <string name="Siguiente1">Siguiente</string>
 
 
 </resources>

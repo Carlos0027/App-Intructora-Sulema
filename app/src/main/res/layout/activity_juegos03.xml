@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo003"
     android:padding="24dp"
-    tools:context=".Juego3"> <!-- MEJORA: El contexto ahora apunta a Juego3 -->
+    tools:context=".controller.Juegos03"> <!-- MEJORA: El contexto ahora apunta a Juego3 -->
 
     <!-- Puntaje en la esquina superior derecha -->
     <TextView
