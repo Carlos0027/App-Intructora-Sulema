@@ -64,6 +64,11 @@ public class Register extends AppCompatActivity {
 
                 if (resul > 0) {
                     Toast.makeText(Register.this, "Datos insertados", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(Register.this, MostrarDatos.class);
+                    startActivity(intent);
+
+
                 } else {
                     Toast.makeText(Register.this, "Error al insertar datos", Toast.LENGTH_SHORT).show();
                 }

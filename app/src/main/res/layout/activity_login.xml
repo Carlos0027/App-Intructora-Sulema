@@ -12,7 +12,7 @@
     <!-- Campo para Usuario o Email -->
 
     <ImageView
-        android:id="@+id/ivLogo"
+        android:id="@+id/imvLogo"
         android:layout_width="250dp"
         android:layout_height="218dp"
         android:layout_marginBottom="1dp"
@@ -20,7 +20,7 @@
         android:src="@drawable/fondobimbo" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_hint_email_basico"
@@ -29,7 +29,7 @@
 
     <!-- Campo para Contraseña -->
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_hint_password_basico"
@@ -47,7 +47,7 @@
 
     <!-- Texto para Registrarse -->
     <TextView
-        android:id="@+id/tvSignUp"
+        android:id="@+id/txvSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

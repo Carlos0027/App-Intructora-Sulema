@@ -1,5 +1,6 @@
 package com.carlos.myappcarlos.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -26,7 +27,10 @@ public class Juegos04 extends AppCompatActivity implements View.OnClickListener 
     private int score = 0;
     private boolean clickBloqueado = false;
 
-    // 🎵 SONIDOS
+    // Datos del registro
+    private String nombre, apellido, email;
+
+    // 🎵 Sonidos
     private MediaPlayer sonidoCorrecto;
     private MediaPlayer sonidoIncorrecto;
 
@@ -35,11 +39,17 @@ public class Juegos04 extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juegos04);
 
+        // Recibir puntaje previo (si existiera)
         score = getIntent().getIntExtra("CURRENT_SCORE", 0);
 
-        // Cargar sonidos reales
-        sonidoCorrecto = MediaPlayer.create(this, R.raw.blue);     // Sonido correcto
-        sonidoIncorrecto = MediaPlayer.create(this, R.raw.audio1); // Sonido incorrecto
+        // Recibir datos del registro
+        nombre = getIntent().getStringExtra("nombre");
+        apellido = getIntent().getStringExtra("apellido");
+        email = getIntent().getStringExtra("email");
+
+        // Crear sonidos
+        sonidoCorrecto = MediaPlayer.create(this, R.raw.blue);
+        sonidoIncorrecto = MediaPlayer.create(this, R.raw.audio1);
 
         vincularVistas();
         configurarListeners();
@@ -72,30 +82,27 @@ public class Juegos04 extends AppCompatActivity implements View.OnClickListener 
 
         // ---- NIVEL AZUL ----
         List<Integer> opciones = new ArrayList<>();
-        opciones.add(R.drawable.azull);   // Correcta
+        opciones.add(R.drawable.azull); // Correcta
         opciones.add(R.drawable.rojo);
         opciones.add(R.drawable.verde);
         opciones.add(R.drawable.amarillo);
 
         preguntaActual = new Pregunta(
-                "Blue",              // palabra a mostrar
-                R.drawable.azull,    // imagen correcta
+                "Blue",
+                R.drawable.azull,
                 opciones
         );
 
-        // Mostrar palabra
         tvWordToGuess.setText(preguntaActual.palabra);
 
-        // Mezclar imágenes
         List<Integer> opcionesMezcladas = new ArrayList<>(preguntaActual.opciones);
         Collections.shuffle(opcionesMezcladas);
 
-        // Cargar imágenes en botones
         for (int i = 0; i < imageButtons.size(); i++) {
             ImageButton boton = imageButtons.get(i);
             int imagenId = opcionesMezcladas.get(i);
             boton.setImageResource(imagenId);
-            boton.setTag(imagenId); // IMPORTANTE
+            boton.setTag(imagenId);
         }
     }
 
@@ -115,23 +122,41 @@ public class Juegos04 extends AppCompatActivity implements View.OnClickListener 
 
             textFeedback.setText("✔ Correcto");
             textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_green_dark));
-
             sonidoCorrecto.start();
 
         } else {
 
             textFeedback.setText("✘ Incorrecto");
             textFeedback.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark));
-
             sonidoIncorrecto.start();
         }
 
-        // Muestra mensaje final luego de 1.5 segundos
         new Handler(Looper.getMainLooper()).postDelayed(this::mostrarResultadoFinal, 1500);
     }
 
     private void mostrarResultadoFinal() {
         textFeedback.setText("Juego Terminado. Puntuación final: " + score);
+
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+
+            Intent intent = new Intent(Juegos04.this, MostrarDatos.class);
+
+            // ENVIAR DATOS DEL REGISTER
+            intent.putExtra("nombre", nombre);
+            intent.putExtra("apellido", apellido);
+            intent.putExtra("email", email);
+
+            // ENVIAR PUNTAJE FINAL
+            intent.putExtra("FINAL_SCORE", score);
+
+            startActivity(intent);
+
+            // 🔥 ANIMACIÓN (ya conectada)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
+            finish();
+
+        }, 1000);
     }
 
     @Override

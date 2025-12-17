@@ -12,6 +12,11 @@ public class Datos {
 
     private String genero;
 
+
+    public Datos(){
+
+    }
+
     public Datos(String nombre, String apodo, int edad, String colegio, String genero){
         this.nombre = nombre;
         this.apodo = apodo;
@@ -61,5 +66,10 @@ public class Datos {
 
     public String getGenero(){
         return genero;
+    }
+
+    @Override
+    public String toString() {
+        return nombre + " " + apodo + "\n" + edad + " " + colegio + " " + genero;
     }
 }

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAppCarlos">
         <activity
+            android:name=".MostrarDatos"
+            android:exported="false" />
+        <activity
             android:name=".BaseGame"
             android:exported="false" />
         <activity
